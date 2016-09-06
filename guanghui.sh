@@ -15,4 +15,6 @@ lan_ip=$(ifconfig | grep inet | head -n1 | cut -d":" -f2 | awk '{print $1}' )
 PS1='\[\033[01;32m\]\u@$ip\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \j\$ '
 
 ulimit -c unlimited
-ulimit -n 1000000
+if uname | grep Linux; then
+    ulimit -n 1000000
+fi
