@@ -5,12 +5,14 @@ alias l='ls -lrtahF'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
 
+ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^10\. | head -n1 )
+if [ -z "$ip" ]; then
+    ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 |  head -n1 )
+fi
 wan_ip=$(ifconfig | grep inet | head -n2 | tail -n1 | cut -d":" -f2 | awk '{print $1}' )
 lan_ip=$(ifconfig | grep inet | head -n1 | cut -d":" -f2 | awk '{print $1}' )
-export bashrc='/etc/profile.d/guanghui.sh'
 
-PS1='\[\033[01;32m\]\u@$wan_ip\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \j\$ '
+PS1='\[\033[01;32m\]\u@$ip\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \j\$ '
 
 ulimit -c unlimited
 ulimit -n 1000000
-
