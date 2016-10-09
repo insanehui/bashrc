@@ -5,7 +5,12 @@ alias l='ls -lrtahF'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
 
-ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^10\. | head -n1 )
+ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^172\. | grep -v ^10\. | head -n1 )
+
+if [ -z "$ip" ]; then
+    ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^172\. |  head -n1 )
+fi
+
 if [ -z "$ip" ]; then
     ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 |  head -n1 )
 fi
