@@ -9,8 +9,9 @@ ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 12
 if [ -z "$ip" ]; then
     ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 |  head -n1 )
 fi
-wan_ip=$(ifconfig | grep inet | head -n2 | tail -n1 | cut -d":" -f2 | awk '{print $1}' )
-lan_ip=$(ifconfig | grep inet | head -n1 | cut -d":" -f2 | awk '{print $1}' )
+
+#wan_ip=$(ifconfig | grep inet | head -n2 | tail -n1 | cut -d":" -f2 | awk '{print $1}' )
+#lan_ip=$(ifconfig | grep inet | head -n1 | cut -d":" -f2 | awk '{print $1}' )
 
 PS1='\[\033[01;32m\]\u@$ip\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \j\$ '
 
