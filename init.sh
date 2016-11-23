@@ -10,3 +10,6 @@ cat << EOF > ~/.bashrc
 . ~/bashrc/guanghui.sh
 EOF
 
+# 初始化vim的环境
+# TODO
+
