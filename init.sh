@@ -7,6 +7,6 @@ fi
 
 # 生成新的.bashrc
 cat << EOF > ~/.bashrc
-. ~/bashrc/.bashrc
+. ~/bashrc/guanghui.sh
 EOF
 
