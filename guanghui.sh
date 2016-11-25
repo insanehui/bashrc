@@ -1,6 +1,11 @@
 #!/bin/bash
 
-#alias vi='vim'
+alias vi='vim -u ~/vimfiles/vimrc'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 alias l='ls -lrtahF'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
