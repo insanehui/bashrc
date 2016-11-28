@@ -9,7 +9,9 @@ alias egrep='egrep --color=auto'
 alias l='ls -lrtahF'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
-if ! uname -a | grep MINGW > /dev/null; then
+if uname -a | grep MINGW > /dev/null; then
+    alias gt='go test -run'
+else
     ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^172\. | grep -v ^10\. | head -n1 )
 
     if [ -z "$ip" ]; then
