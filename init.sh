@@ -10,6 +10,6 @@ cat << EOF > ~/.bashrc
 . ~/bashrc/guanghui.sh
 EOF
 
-# 初始化vim的环境
+# 初始化vim
 git clone https://github.com/insanehui/vimfiles.git
 
