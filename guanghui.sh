@@ -9,15 +9,16 @@ alias egrep='egrep --color=auto'
 alias l='ls -lrtahF'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
+if ! uname -a | grep MINGW > /dev/null; then
+    ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^172\. | grep -v ^10\. | head -n1 )
 
-ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^172\. | grep -v ^10\. | head -n1 )
+    if [ -z "$ip" ]; then
+        ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^172\. |  head -n1 )
+    fi
 
-if [ -z "$ip" ]; then
-    ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 | grep -v ^172\. |  head -n1 )
-fi
-
-if [ -z "$ip" ]; then
-    ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 |  head -n1 )
+    if [ -z "$ip" ]; then
+        ip=$(ifconfig | grep -w inet | awk '{ print $2 }' | sed 's/addr://' | grep -v 127.0.0.1 |  head -n1 )
+    fi
 fi
 
 #wan_ip=$(ifconfig | grep inet | head -n2 | tail -n1 | cut -d":" -f2 | awk '{print $1}' )
