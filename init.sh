@@ -11,5 +11,5 @@ cat << EOF > ~/.bashrc
 EOF
 
 # 初始化vim的环境
-# TODO
+git clone https://github.com/insanehui/vimfiles.git
 
