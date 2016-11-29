@@ -6,6 +6,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# git 相关
+alias gh='git push'
+alias gs='git status'
+
 alias l='ls -lrtahF'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
