@@ -5,6 +5,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias rm='rm -i'
 
 # git 相关
 alias gh='git push'
