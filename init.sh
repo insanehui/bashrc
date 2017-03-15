@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO: 初始化的脚本，考虑一下，今后有没有必要用node来写？
+# 
+
 # 备份原有的.bashrc
 if [ -e ~/.bashrc ]; then
     mv ~/.bashrc ~/.bashrc.bak
