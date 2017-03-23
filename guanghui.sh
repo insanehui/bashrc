@@ -6,14 +6,18 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias rm='rm -i'
+alias l='ls -lrtahF'
+alias ..='cd ..'
+alias ...='cd ..;cd ..'
 
 # git 相关
 alias gh='git push'
 alias gs='git status'
 
-alias l='ls -lrtahF'
-alias ..='cd ..'
-alias ...='cd ..;cd ..'
+# docker相关
+alias dd='docker run -d --restart=always' #以服务运行，会覆盖linux原有的dd命令
+alias dt='docker run -it --rm'
+
 if uname -a | grep MINGW > /dev/null; then
     alias gt='go test -run'
 else
