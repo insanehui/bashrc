@@ -15,6 +15,7 @@ alias gh='git push'
 alias gs='git status'
 
 # docker相关
+alias dk='docker'
 alias dd='docker run -d --restart=always' #以服务运行，会覆盖linux原有的dd命令
 alias dt='docker run -it --rm'
 
