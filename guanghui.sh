@@ -18,6 +18,7 @@ alias gs='git status'
 alias dk='docker'
 alias dd='docker run -d --restart=always' #以服务运行，会覆盖linux原有的dd命令
 alias dt='docker run -it --rm'
+alias dlogs='docker logs -t'
 
 if uname -a | grep MINGW > /dev/null; then
     alias gt='go test -run'
