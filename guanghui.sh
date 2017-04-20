@@ -39,6 +39,10 @@ fi
 
 PS1='\[\033[01;32m\]\u@$ip\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \j\$ '
 
+function title() { 
+  echo -ne "\033]0;${1}\007" 
+}
+
 ulimit -c unlimited
 if uname | grep Linux; then
     ulimit -n 1000000
