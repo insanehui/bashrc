@@ -37,7 +37,12 @@ fi
 #wan_ip=$(ifconfig | grep inet | head -n2 | tail -n1 | cut -d":" -f2 | awk '{print $1}' )
 #lan_ip=$(ifconfig | grep inet | head -n1 | cut -d":" -f2 | awk '{print $1}' )
 
-PS1='\[\033[01;32m\]\u@$ip\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \j\$ '
+# 如果有MSYSTEM，则认为是在windows git bash环境中
+if [ $MSYSTEM ]; then
+    PS1='\[\033[01;32m\]\u@$ip\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[36m\]`__git_ps1`\[\033[0m\]\$ '
+else
+    PS1='\[\033[01;32m\]\u@$ip\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \j\$ '
+fi
 
 function title() { 
   echo -ne "\033]0;${1}\007" 
